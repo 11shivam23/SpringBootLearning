@@ -103,6 +103,22 @@ public class WebApplication {
 		//Deleting all elements
 		// userRepository.deleteAll();
 
+
+		// Derived 
+		Iterable<UserModel> users = userRepository.findByName("Shivam");
+		users.forEach(user->{
+			System.out.println(user);
+		});
+
+		Iterable<UserModel> users2 = userRepository.findByNameAndCity("Shivam", "Meerut");
+		users2.forEach(user->{
+			System.out.println(user);
+		});
+
+		Iterable<UserModel> users3 = userRepository.findByNameStartingWith("S");
+		users3.forEach(user->{
+			System.out.println(user);
+		});
 	}
 
 }
