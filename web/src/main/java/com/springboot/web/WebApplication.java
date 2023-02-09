@@ -4,15 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.function.Consumer;
-
-import org.apache.catalina.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-
 import com.springboot.web.model.UserModel;
 import com.springboot.web.repository.UserRepository;
-
 
 @SpringBootApplication
 public class WebApplication {
@@ -32,7 +28,7 @@ public class WebApplication {
 		// UserModel user1 = userRepository.save(user);
 		// System.out.println(user1);
 
-		//CRUD Operations
+		// CRUD Operations
 		// UserModel userModel1 = new UserModel();
 		// userModel1.setName("Chavi");
 		// userModel1.setCity("Delhi");
@@ -43,9 +39,9 @@ public class WebApplication {
 		// userModel2.setCity("Gurgaon");
 		// userModel2.setStatus("I'm a Senior Software Engineer");
 		
-		// //Saving single user
-		// // UserModel saveUser1 = userRepository.save(userModel2);
-		// // System.out.println(saveUser1);
+		// // Saving single user
+		// UserModel saveUser1 = userRepository.save(userModel2);
+		// System.out.println(saveUser1);
 
 		// //Saving multiple user
 		// ArrayList<UserModel> users = new ArrayList<UserModel>();
@@ -104,21 +100,33 @@ public class WebApplication {
 		// userRepository.deleteAll();
 
 
-		// Derived 
-		Iterable<UserModel> users = userRepository.findByName("Shivam");
-		users.forEach(user->{
+		// // Derived Methods or Custom finding methods
+		// users.forEach(user->{
+		// 	System.out.println(user);
+		// });
+
+		// Iterable<UserModel> users2 = userRepository.findByNameAndCity("Shivam", "Meerut");
+		// users2.forEach(user->{
+		// 	System.out.println(user);
+		// });
+
+		// Iterable<UserModel> users3 = userRepository.findByNameStartingWith("S");
+		// users3.forEach(user->{
+		// 	System.out.println(user);
+		// });
+
+
+		Iterable<UserModel> users4 = userRepository.getAllUser();
+		users4.forEach(user->{
 			System.out.println(user);
 		});
 
-		Iterable<UserModel> users2 = userRepository.findByNameAndCity("Shivam", "Meerut");
-		users2.forEach(user->{
+		Iterable<UserModel> user5 = userRepository.getUserByName("Shivam");
+		user5.forEach(user->{
 			System.out.println(user);
 		});
 
-		Iterable<UserModel> users3 = userRepository.findByNameStartingWith("S");
-		users3.forEach(user->{
-			System.out.println(user);
-		});
+		userRepository.getUsers().forEach(user->{System.out.println(user);});
 	}
 
 }
