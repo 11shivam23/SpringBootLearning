@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,7 +58,13 @@ public class BookController {
    }
 
    @DeleteMapping("/deleteBook/{id}")
-   public void deleteBook(@PathVariable int id) {
+   public void deleteBook(@PathVariable("id") int id) {
         bookService.deleteBook(id);
+   }
+
+   @PutMapping("/updateBook/{id}")
+   public Book updateBook(@PathVariable("id") int id, @RequestBody Book book) {
+        this.bookService.updateBook(id, book);
+        return book;
    }
 }
