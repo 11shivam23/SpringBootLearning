@@ -14,15 +14,16 @@ import com.springboot.web.repository.UserRepository;
 public class WebApplication {
 
 	public static void main(String[] args) {
-		// SpringApplication.run(WebApplication.class, args);
+		
+		SpringApplication.run(WebApplication.class, args);
 
-		ApplicationContext context = SpringApplication.run(WebApplication.class, args);
-		UserRepository userRepository = context.getBean(UserRepository.class);
+		// ApplicationContext context = SpringApplication.run(WebApplication.class, args);
+		// UserRepository userRepository = context.getBean(UserRepository.class);
 
 		//Save data of a user in DB
 		// UserModel user = new UserModel();
 		// user.setName("Shivam");
-		// user.setCity("Meerut");
+		// user.setCity("Meerut"); 
 		// user.setStatus("I'm a java programmer");
 
 		// UserModel user1 = userRepository.save(user);
@@ -116,17 +117,17 @@ public class WebApplication {
 		// });
 
 
-		Iterable<UserModel> users4 = userRepository.getAllUser();
-		users4.forEach(user->{
-			System.out.println(user);
-		});
+		// Iterable<UserModel> users4 = userRepository.getAllUser();
+		// users4.forEach(user->{
+		// 	System.out.println(user);
+		// });
 
-		Iterable<UserModel> user5 = userRepository.getUserByName("Shivam");
-		user5.forEach(user->{
-			System.out.println(user);
-		});
+		// Iterable<UserModel> user5 = userRepository.getUserByName("Shivam");
+		// user5.forEach(user->{
+		// 	System.out.println(user);
+		// });
 
-		userRepository.getUsers().forEach(user->{System.out.println(user);});
+		// userRepository.getUsers().forEach(user->{System.out.println(user);});
 	}
 
 }
