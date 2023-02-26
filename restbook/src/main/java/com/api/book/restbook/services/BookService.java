@@ -19,9 +19,9 @@ public class BookService {
     BookRepository bookRepository;
 
     static {
-        list.add(new Book(1, "Rich Dad", "piyush"));
-        list.add(new Book(2, "Poor Dad", "Akashay"));
-        list.add(new Book(3, "Avg Dad", "Pranav"));
+        // list.add(new Book(1, "Rich Dad", "piyush"));
+        // list.add(new Book(2, "Poor Dad", "Akashay"));
+        // list.add(new Book(3, "Avg Dad", "Pranav"));
     }
 
     //getAllBooks

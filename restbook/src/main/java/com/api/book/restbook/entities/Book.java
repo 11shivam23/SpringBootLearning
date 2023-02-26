@@ -1,11 +1,12 @@
 package com.api.book.restbook.entities;
 
-import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,9 +20,10 @@ public class Book {
 
     private String title;
 
-    private String author;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Author author;
 
-    public Book(int id, String title, String author) {
+    public Book(int id, String title, Author author) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -46,17 +48,16 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
     @Override
     public String toString() {
-        return "Book [id=" + id + ", title=" + title + ", author=" + author + "]";
+        return "Book [id=" + id + ", title=" + title + ", author1=" + author + "]"; 
     }
-
 }

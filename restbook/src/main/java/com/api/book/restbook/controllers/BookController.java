@@ -41,7 +41,7 @@ public class BookController {
         Book book = new Book();
         book.setId(0);
         book.setTitle("Java Complete Reference");
-        book.setAuthor("Shivam");
+        // book.setAuthor("Shivam");
         return book;
     }
 
