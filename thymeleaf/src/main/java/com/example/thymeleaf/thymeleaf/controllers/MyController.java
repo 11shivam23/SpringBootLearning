@@ -28,4 +28,16 @@ public class MyController {
         m.addAttribute("names",names);
         return "iterate";
     }
+
+    //handling for conditional statements
+    @GetMapping("/condition")
+    public String conditionhandler(Model m) {
+        System.out.println("Conditional handler executed");
+        m.addAttribute("isActive", true);
+        m.addAttribute("gender", "M");
+
+        List<Integer> myList = List.of(127,123,323,443,55);
+        m.addAttribute("myList", myList);
+        return "condition";
+    }
 }
