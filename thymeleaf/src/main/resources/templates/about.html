@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <h1>About Learn code with Durgesh</h1>
+    <h2>We are learing springboot</h2>
+    <h3>Name of the owner is <span th:text="${name}"></span> </h3>
+    <h4 th:text="${name}"></h4>
+    <h4 th:text="${#strings.toUpperCase(name)}"></h4>
+    <h4>length of the name is <span th:text="${#strings.length(name)}"></span> </h4>
+    <h5 th:text="${currentDate}"></h5>
+
+    <div th:with="a=5, b=67, n=${name}">
+        <p>Value of a is <span th:text="${a}"></span></p>
+        <p th:text="'Value of b is '+${b}"></p>
+        <p>Local value of n is <span th:text="${n}"></span></p>
+        <p th:text="'Sum of '+${a}+' and '+${b}+' is '+${a+b}"></p>
+    </div>
+</body>
+</html>
