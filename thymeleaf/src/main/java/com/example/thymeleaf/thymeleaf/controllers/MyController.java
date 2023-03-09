@@ -1,5 +1,6 @@
 package com.example.thymeleaf.thymeleaf.controllers;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -44,6 +45,8 @@ public class MyController {
     //handler for including fragments
     @GetMapping(value = "/services")
     public String mainHandler(Model m) {
+        m.addAttribute("title", "I like to eat pizza");
+        m.addAttribute("subtitle", LocalDateTime.now().toString());
         return "service";
     }
 }

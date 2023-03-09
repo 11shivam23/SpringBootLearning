@@ -7,8 +7,10 @@
     <title>Footer tag</title>
 </head>
 <body>
-    <footer th:fragment="footer1(title)">
+    <footer th:fragment="footer1(title, subtitle)">
         <div class="container">
+            <h1 th:text="${title}"></h1>
+            <h2 th:text="${subtitle}"></h2>
             <h1>About learn code with Shivam</h1>
             <h2>Provide good content about programming</h2>
             <h3>Feel free to contact and work</h3>
