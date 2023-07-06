@@ -3,6 +3,7 @@ package com.example.exception.exception_handler.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import com.example.exception.exception_handler.service.EmployeeService;
 public class EmployeeController {
     
     @Autowired
+    @Qualifier("employeeServiceImpl")
     private EmployeeService employeeService;
 
     @PostMapping

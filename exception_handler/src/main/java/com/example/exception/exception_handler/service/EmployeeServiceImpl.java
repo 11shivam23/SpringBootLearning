@@ -37,5 +37,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .findFirst()
                 .orElseThrow(()-> new EmployeeNotFoundException("Employee not found with Id: " + id));
     }
+
+    @Override
+    public String deleteEmployeeById(String id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteEmployeeById'");
+    }
     
 }
